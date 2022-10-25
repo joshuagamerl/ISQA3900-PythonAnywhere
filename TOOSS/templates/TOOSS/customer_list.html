@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'TOOSS/base.html' %}
+{% block content %}
+    <body>
+
+        <h1>Customer Information</h1>
+
+    <body class="bodylist">
+    <div>
+        <table class="table table-striped table-bordered table-hover w-auto">
+            <thead>
+<tr class="bg-info">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
+
+                <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.cust_name }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.phone }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>{{ customer.city }}</td>
+                    <td>{{ customer.state }}</td>
+                    <td>{{ customer.zipcode }}</td>
+                    <td><a href="{% url 'TOOSS:customer_edit' pk=customer.pk %}"
+                           class="btn btn-warning">Edit</a></td>
+                    <td><a href="{% url 'TOOSS:customer_delete' pk=customer.pk %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-danger">Delete</a>
+                    </td>
+                    <td><a href="{% url 'TOOSS:summary' pk=customer.pk %}"
+                           class="btn btn-primary">Summary</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    </body>
+    </html>
+{% endblock %}
+
+</html>

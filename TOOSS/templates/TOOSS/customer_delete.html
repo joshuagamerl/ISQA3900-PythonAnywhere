@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block body_block %}
+    <h1>Delete {{ customer.cust_name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'TOOSS:home' pk=cust_name %} ">Cancel</a>
+    </form>
+{% endblock %}
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'TOOSS/base.html' %}
+{% load static %}
+{% block content %}
+    <body>
+
+        <h1>Inventory List</h1>
+
+    <div id="inv">
+        {% for inventory in inventorys %}
+            <div class="container">
+
+                <ul>
+                    <li class="item_name">Item Name: {{ inventory.item_name }}</li>
+                    <li>Item Description: {{ inventory.item_description }}</li>
+                    <li><img class="" src="{% static 'images/placeholder.png'%}" alt="placeholder"></li>
+                    <li>Item Cost: ${{ inventory.item_cost }}</li>
+                    <li>In Stock: {{ inventory.item_stock }}</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+
+                </ul>
+
+            </div>
+        {% endfor %}
+    </div>
+
+    </body>
+{% endblock %}
+</html>

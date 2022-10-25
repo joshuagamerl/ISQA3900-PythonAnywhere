@@ -1,0 +1,105 @@
+body {
+    font-family:"Comic Sans MS", sans-serif;
+}
+
+.bg-navbar {
+    background:#5993bb;
+
+}
+
+#main {
+    background-color: blanchedalmond;
+    height: 150px;
+    font-size: 25px;
+    text-align: center;
+}
+
+#main ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+}
+
+#main li {
+    display: inline;
+    padding:15px;
+    vertical-align:middle;
+
+}
+
+#main a {
+    color: Darkblue;
+}
+
+#main a:hover {
+    color: Black;
+    text-decoration: underline overline;
+}
+
+.header {
+    font-size: 75px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 55px;
+}
+
+h2 {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+}
+
+#inv {
+    text-align: center;
+}
+
+#inv img {
+    height: 250px;
+    width: 450px;
+}
+
+#inv ul {
+    list-style-type: none;
+}
+
+#inv td {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+#inv p {
+    font-size: 50px;
+}
+
+.container {
+    border: 1px solid black;
+}
+
+.item_name {
+    font-size: 35px;
+}
+
+.table_align {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logs {
+    text-align: center;
+    }
+
+.in_size {
+    font-size: 100px;
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+}

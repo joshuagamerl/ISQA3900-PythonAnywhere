@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'TOOSS/base.html' %}
+{% load static %}
+{% block content %}
+     <body>
+    <style>
+    p {
+        font-size: 200%;
+        align-content: center;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 50%;
+        text-align: center;
+    }
+    </style>
+
+    <p>
+        Welcome to our store where we supply all of our finest office supply needs
+        <br><br>
+        <img src="{% static 'images/office.jpg' %}" alt="office meme" width="650" height="345">
+    </p>
+
+    <h1>
+        This is a student project!!
+    </h1>
+
+    </body>
+{% endblock %}
+</html>

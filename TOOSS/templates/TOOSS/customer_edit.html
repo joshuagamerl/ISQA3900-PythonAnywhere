@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'TOOSS/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <style>
+        body {background-color: whitesmoke;}
+    </style>
+    <h1>Edit Customer</h1>
+    <div id="logs">
+    <form method="POST" class="customer-form">{% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    </div>
+{% endblock %}
+</html>

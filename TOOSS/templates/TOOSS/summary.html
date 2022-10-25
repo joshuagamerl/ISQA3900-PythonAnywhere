@@ -1,0 +1,49 @@
+{% extends 'TOOSS/base.html' %}
+{% block content %}
+{% load mathfilters %}
+{% load humanize %}
+    <div>
+      <h1 style="padding-left: 15Px">Customer Summary</h1>
+    </div>
+    <div>
+        <h2 style="padding-left: 15Px">Order Information</h2>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Order Details ID</th>
+                <th>Username</th>
+                <th>Order ID</th>
+                <th>Item ID</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.order_detail_id }}</td>
+                    <td>{{ order.user_name}}</td>
+                    <td>{{ order.order_id}}</td>
+                    <td>{{ order.item_id}}</td>
+                    <td>{{ order.price }}</td>
+                    <td>{{ order.quantity }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Total of Order Charges</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ sum_order_charge.price__sum|intcomma }}</td>
+                </tr>
+            </tbody>
+        </table>
+{% endblock %}
