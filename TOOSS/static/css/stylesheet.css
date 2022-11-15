@@ -46,14 +46,6 @@ h1 {
     font-size: 55px;
 }
 
-h2 {
-    text-align: center;
-}
-
-table {
-    margin: auto;
-}
-
 #inv {
     text-align: center;
 }
@@ -89,17 +81,29 @@ table {
 .table_align {
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid black;
 }
 
 #logs {
     text-align: center;
     }
 
+#logs p {
+    width: 5px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    display: block;
+    font-size: 50px;
+}
+
+
 .in_size {
     font-size: 100px;
 }
 
-.table {
-    margin-left: auto;
-    margin-right: auto;
+.cart {
+    float:right;
+    padding-top:4px;
 }

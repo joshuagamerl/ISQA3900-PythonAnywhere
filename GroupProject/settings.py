@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1$74s6go)(5do==gjb@2x3kn6su-pp!3nz)dlmku5ln0b%q(=r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'TOOSS.apps.ToossConfig',
+    'cart.apps.CartConfig',
     'crispy_forms',
     'django.contrib.humanize',
-    'mathfilters',
+    'mathfilters'
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+CART_SESSION_ID = 'cart'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "cart.context_processors.cart",
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

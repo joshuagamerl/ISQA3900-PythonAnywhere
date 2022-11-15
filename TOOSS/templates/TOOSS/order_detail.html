@@ -1,0 +1,40 @@
+{% extends "TOOSS/base.html" %}
+{% load static %}
+{% load mathfilters %}
+{% load humanize %}
+
+{% block content %}
+
+<h1>Order Details: {{ order_detail.order_detail_id }}</h1>
+<div id="inv" style="margin-left:20px;margin-top:20px">
+
+<p>Total Price: ${{ sum_order_charge }}</p>
+
+{% for orders in orders %}
+
+<hr>
+<div class="container">
+
+                <ul>
+                    <li class="item_name">Order ID: {{ orders.order_id }}</li>
+                    <li>Item Name: {{ orders.item_id }}</li>
+                    {% for inventory in inventory %}
+                        {% if orders.item_id|escape == inventory.item_name|escape %}
+                    <li><img class="" src="{% if inventory.image %}{{ inventory.image.url }}
+                        {% else %}
+                        {% static 'images/placeholder.png'%}{% endif %}" alt="placeholder"></li>
+                        {% endif %}
+                        {% endfor %}
+                    <li>Item Cost: ${{ orders.price }}</li>
+                    <li>Item Quantity: {{ orders.quantity }}</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+
+                </ul>
+
+            </div>
+{% endfor %}
+</div>
+{% endblock %}

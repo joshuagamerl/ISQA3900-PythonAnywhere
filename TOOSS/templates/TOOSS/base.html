@@ -13,12 +13,12 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>  -->
 
 <!-- add local stylesheet -->
-<link rel="stylesheet" href="{% static "/css/stylesheet.css" %}">
+<link rel="stylesheet" href="{% static "css/stylesheet.css" %}">
 
 
 <div id="main">
 
-    <div>
+    <div class="">
         <!-- Branding Image -->
         <a class="header" href="">
             'The Office' Office Supply Store
@@ -30,28 +30,41 @@
         </button> -->
     </div>
     <!-- Dark background with white text -->
-    <nav id="myNavbar">
+    <nav class="" id="myNavbar">
         <!--Display navigation options left-justified in navbar -->
-        <ul>
-            <li></li>
-            <li>
-                <a href="{% url 'TOOSS:home' %}">Home</a>
+        <ul class="">
+            <li class="navbar-brand"></li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'TOOSS:home' %}">Home</a>
             </li>
-            <li>
-                <a href="{% url 'TOOSS:inventory_list' %}">Inventory</a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'TOOSS:inventory_list' %}">Inventory</a>
             </li>
-            <li>
-                <a href="{% url 'TOOSS:order_list' %}">Orders</a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'TOOSS:order_list' %}">Orders</a>
             </li>
             {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'TOOSS:customer_list' %}">Customers</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'TOOSS:customer_list' %}">Customers</a>
                 </li>
-                <li><a href="{% url 'logout'%}">Logout</a></li>
+                <li><a class="" href="{% url 'logout'%}">Logout</a></li>
 
             {% else %}
-                <li><a href="{% url 'login'%}">Login</a></li>
+                <li><a class="" href="{% url 'login'%}">Login</a></li>
             {% endif %}
+         <div class="cart">
+      {% with total_items=cart|length %}
+          {% if cart|length > 0 %}
+            Your cart:
+            <a href="{% url "cart:cart_detail" %}">
+              {{ total_items }} item{{ total_items|pluralize }},
+              ${{ cart.get_total_price }}
+            </a>
+          {% else %}
+            Your cart is empty.
+          {% endif %}
+        {% endwith %}
+        </div>
         </ul>
         <!--Display Login/Logout right-justified in navbar -->
 
@@ -59,9 +72,9 @@
 
 
 </div>
-<body>
-<div>
-    <div>
+<body id="">
+<div class="row">
+    <div class="col-md-8">
         {% block content %}
         {% endblock %}
     </div>

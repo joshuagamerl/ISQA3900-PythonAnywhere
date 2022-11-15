@@ -14,7 +14,9 @@ class UserList(admin.ModelAdmin):
 class InventoryList(admin.ModelAdmin):
     list_display = ('item_name', 'item_description', 'item_cost', 'item_stock')
     list_filter = ('item_name', 'item_description')
+    list_editable =['item_cost', 'item_stock']
     search_fields = ('item_name',)
+    prepopulated_fields = {'slug': ('item_name',)}
     ordering = ['item_name']
 
 
@@ -47,7 +49,7 @@ class CustomerList(admin.ModelAdmin):
 
 
 admin.site.register(Customer, CustomerList)
-admin.site.register(User, UserList)
+# admin.site.register(User, UserList)
 admin.site.register(Inventory, InventoryList)
 admin.site.register(Payment, PaymentList)
 admin.site.register(Order, OrderList)

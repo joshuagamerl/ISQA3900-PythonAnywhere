@@ -11,8 +11,8 @@
           <div class="container">
             {% for order in orders %}
               <ul>
-                  <li class="order_id">Item Name: {{ order.order_id }}</li>
-                  <li>Paid: {{ order.order_paid }}</li>
+                  <li class="order_id">Item Number: <a href="{% url 'TOOSS:order_detail' pk=order.pk %}">{{ order.order_id }}</a></li>
+                  <li>Paid:{% if order.order_paid == False %}No{% else %}Yes{% endif %}</li>
                   <!--<li><img class="invimg" src="{% static 'images/placeholder.png'%}" alt="placeholder"></li> -->
                   <li>Date: {{ order.order_create_date }}</li>
                   <li>Update Date: {{ order.order_update_date }}</li>

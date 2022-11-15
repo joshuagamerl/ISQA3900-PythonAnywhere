@@ -2,16 +2,16 @@
 {% block content %}
 {% load mathfilters %}
 {% load humanize %}
-    <div>
+    <div class="row">
       <h1 style="padding-left: 15Px">Customer Summary</h1>
     </div>
-    <div>
+    <div class="row">
         <h2 style="padding-left: 15Px">Order Information</h2>
     </div>
-    <div>
-        <table>
+    <div class="row">
+        <table class="table table-striped table-bordered table-hover">
             <thead>
-            <tr>
+            <tr class="bg-info">
                 <th>Order Details ID</th>
                 <th>Username</th>
                 <th>Order ID</th>
@@ -34,9 +34,9 @@
             </tbody>
         </table>
     </div>
-        <table>
+        <table class="table table-striped table-bordered table-hover">
             <thead>
-                <tr>
+                <tr class="bg-info">
                     <th>Total of Order Charges</th>
                 </tr>
             </thead>

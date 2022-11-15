@@ -1,0 +1,20 @@
+{% extends "TOOSS/base.html" %}
+{% load static %}
+
+{% block title %}
+  {{ inventory.name }}
+{% endblock %}
+
+{% block content %}
+  <div>
+    <img src="{% if inventory.image %}{{ inventory.image.url }}{% else %}{% static "images/placeholder.png" %}{% endif %}">
+    <h1>{{ inventory.name }}</h1>
+    <p class="price">${{ inventory.item_cost }}</p>
+    <form action="{% url "cart:cart_add" inventory.item_id %}" method="post">
+      {{ cart_inventory_form }}
+      {% csrf_token %}
+      <input type="submit" value="Add to cart">
+    </form>
+    {{ inventory.item_description|linebreaks }}
+  </div>
+{% endblock %}
