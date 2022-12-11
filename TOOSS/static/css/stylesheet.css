@@ -47,8 +47,7 @@ h1 {
 }
 
 #inv {
-    text-align: center;
-}
+    text-align: center;}
 
 #inv img {
     height: 250px;
@@ -70,8 +69,47 @@ h1 {
     font-size: 50px;
 }
 
+#reg {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+#reg p {
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#reg label {
+    font-size: 25px;
+}
+
+#reg td {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+#reg ul {
+    list-style-type: none;
+}
+
+#reg img {
+    height: 250px;
+    width: 450px;
+}
+
 .container {
     border: 1px solid black;
+}
+
+#pic img {
+    height: 250px;
+    width: 450px;
 }
 
 .item_name {

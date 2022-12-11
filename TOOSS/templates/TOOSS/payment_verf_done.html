@@ -1,0 +1,7 @@
+{% extends "TOOSS/base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center;">Order Confirmed {{ new_order.user_name }}!</h1>
+
+    <p style="text-align: center;font-size:25px;">Your order has been successfully created. View Order? <a href="{% url "TOOSS:order_list" %}">{{ new_order.order_id }}</a>.</p>
+{% endblock %}

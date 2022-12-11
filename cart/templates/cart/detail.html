@@ -24,7 +24,7 @@
           <tr>
             <td>
               <a href="{{ inventory.get_absolute_url }}">
-                <img src="{% if inventory.image %}{{ inventory.image.url }}{% else %}{% static "images/placeholder.png" %}{% endif %}">
+                <img width="75px" height="75px" src="{% if inventory.image %}{{ inventory.image.url }}{% else %}{% static "images/placeholder.png" %}{% endif %}">
               </a>
             </td>
             <td>{{ inventory.item_name }}</td>
@@ -51,7 +51,7 @@
   </table>
   <p class="text-right">
     <a href="{% url "TOOSS:inventory_list" %}" class="button light">Continue shopping</a>
-    <a href="" class="button">
+    <a href="{% url "TOOSS:payment_verf" %}" class="button">
       Checkout
     </a>
   </p>

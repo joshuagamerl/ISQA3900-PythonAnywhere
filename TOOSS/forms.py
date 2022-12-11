@@ -1,5 +1,5 @@
 from django import forms
-from .models import Inventory, Customer
+from .models import Inventory, Customer, Payment
 from django.contrib.auth.models import User
 
 
@@ -14,6 +14,13 @@ class CustomerForm(forms.ModelForm):
         model = Customer
         fields = ('cust_name', 'email', 'phone', 'address', 'city', 'state', 'zipcode')
 
+class PaymentForm(forms.ModelForm):
+
+
+    class Meta:
+        model = Payment
+        fields = ('user_name', 'payment_type', 'order_id', 'paid')
+        exclude = ['user_name', 'order_id']
 
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)

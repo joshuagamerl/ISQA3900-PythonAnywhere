@@ -19,15 +19,15 @@ from django.urls import reverse
 #        return self.user_name
 
 class Customer(models.Model):
-    cust_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    cust_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     fname = models.CharField(max_length=100, blank=True)
     lname = models.CharField(max_length=100, blank=True)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=20)
-    address = models.CharField(max_length=200)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=2)
-    zipcode = models.CharField(max_length=10)
+    address = models.CharField(max_length=200, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True)
+    state = models.CharField(max_length=2, null=True, blank=True)
+    zipcode = models.CharField(max_length=10, null=True, blank=True)
 
     def __str__(self):
         return str(self.cust_name)
@@ -55,12 +55,19 @@ class Inventory(models.Model):
 
 class Payment(models.Model):
     payment_id = models.AutoField(primary_key=True)
-    card_number = models.PositiveBigIntegerField()
     user_name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='payments')
-    payment_type = models.CharField(max_length=20)
-    ccv_code = models.DecimalField(max_digits=3, decimal_places=0)
-    expiration_date = models.DateField()
-    order_detail_id = models.ForeignKey('Order_Detail', on_delete=models.CASCADE)
+
+    PAYMENT_TYPES = (
+        ('cc', 'Credit Card'),
+        ('dc', 'Debit Card'),
+        ('cs', 'Cash'),
+        ('ch', 'Check'),
+        ('bc', 'Bit Coin'),
+    )
+
+    payment_type = models.CharField(max_length=2, choices=PAYMENT_TYPES, blank=True, default='cc')
+    order_id = models.ForeignKey('Order', on_delete=models.CASCADE, null=True, blank=True)
+    paid = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.payment_id) + " " + str(self.user_name)

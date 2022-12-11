@@ -6,7 +6,13 @@
     <body>
 
         <h1>Inventory List</h1>
-
+    <center>
+        <form action="{% url 'TOOSS:searchbar' %}" method="get">
+            <input type="text" name="search"/>
+            <button type="submit">Search</button>
+        </form>
+    </center>
+        <br>
     <div id="inv">
         {% for inventory in inventorys %}
             <div class="container">

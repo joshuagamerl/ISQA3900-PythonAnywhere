@@ -21,7 +21,7 @@ class InventoryList(admin.ModelAdmin):
 
 
 class PaymentList(admin.ModelAdmin):
-    list_display = ('user_name', 'card_number', 'payment_type', 'ccv_code')
+    list_display = ('user_name', 'order_id', 'payment_type', 'paid')
     list_filter = ('user_name', 'payment_type')
     search_fields = ('user_name',)
     ordering = ['user_name']

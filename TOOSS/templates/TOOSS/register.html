@@ -5,9 +5,11 @@
 
     <h1 style="text-align: center;">Create an account</h1>
 
-
+    {% if notCorrect != ""  %}
+        <p style="color: red">{{ notCorrect }}</p>
+    {% endif %}
     <p style="text-align: center;font-size:25px;">Please, fill out the following information:</p>
-    <div id="logs">
+    <div id="">
     <form action="{% url 'TOOSS:register' %}" method="post">
 
     {{ user_form.as_p }}
