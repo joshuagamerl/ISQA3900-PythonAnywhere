@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1$74s6go)(5do==gjb@2x3kn6su-pp!3nz)dlmku5ln0b%q(=r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['isqa3900group7.pythonanywhere.com']
 
 
 # Application definition
@@ -144,3 +144,7 @@ EMAIL_HOST_USER = 'TheOfficeOfficeSupplyStore@gmail.com'
 EMAIL_HOST_PASSWORD = 'ugwhskjqwfaanwbo'
 
 #DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = Path(BASE_DIR / 'static')
+MEDIA_ROOT = Path(BASE_DIR / 'media')
